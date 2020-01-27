@@ -1,4 +1,5 @@
-package Lesson19.Praktika;
+package Lesson19.practika;
+
 
 public class Main {
     public static void main(String[] args) {

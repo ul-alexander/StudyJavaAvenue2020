@@ -1,7 +1,7 @@
-package Lesson19.Praktika;
+package Lesson19.practika;
 
 
-import java.io.FileNotFoundException;
+import Lesson19.FileCopyUtils;
 
 public class CopyFileTaskImpl extends TaskImpl implements CopyFileTask {
 

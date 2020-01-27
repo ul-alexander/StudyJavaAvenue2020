@@ -1,4 +1,4 @@
-package Lesson19.Praktika;
+package Lesson19.practika;
 
 import java.io.File;
 import java.io.FileFilter;

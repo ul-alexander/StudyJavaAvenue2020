@@ -1,4 +1,4 @@
-package Lesson19.Praktika;
+package Lesson19.practika;
 
 public abstract class TaskImpl implements Task {
 
