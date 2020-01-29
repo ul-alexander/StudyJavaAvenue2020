@@ -11,6 +11,10 @@ public class FindFileTaskImpl extends TaskImpl implements FindFilesTask {
     private String searchString;
     private PrintStream out;
 
+    /*public FindFileTaskImpl(String s, String s1) {
+        super();
+    }*/
+
     public String getDirectory() {
         return directory;
     }
@@ -48,6 +52,15 @@ public class FindFileTaskImpl extends TaskImpl implements FindFilesTask {
     }
 
     @Override
+    public String toString() {
+        return "FindFileTaskImpl{" +
+                "directory='" + directory + '\'' +
+                ", searchString='" + searchString + '\'' +
+                ", out=" + out +
+                '}';
+    }
+
+    @Override
     public void execute() throws TaskExecutionFailedException {
 
         File dir = new File(directory);
@@ -55,7 +68,7 @@ public class FindFileTaskImpl extends TaskImpl implements FindFilesTask {
         if (!dir.exists()) {
             new TaskExecutionFailedException("Путь некоректен!!!");
         }
-        
+
         if (!dir.isDirectory()) {
             throw new TaskExecutionFailedException("Это файл , а не папка!");
         }
@@ -74,9 +87,14 @@ public class FindFileTaskImpl extends TaskImpl implements FindFilesTask {
 
         });
 
-        for (File f : files) {
-            out.println(f.getAbsolutePath());
+        if (files != null) {
+            for (File f : files) {
+                out.println(f.getAbsolutePath());
+            }
+        }else{
+            out.println(" Поиск не дал результатов!");
         }
+
 
     }
 }
